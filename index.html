@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Array storing the three possible choices, used for computerChoice
+      const choices = ["Rock", "Paper", "Scissors"];
+
+      // Function that prompts user to make a choice, returns that choice as playerChoice
+      function getPlayerChoice() {
+        playerChoice = prompt("Pick one: Rock, Paper, Scissors");
+        return playerChoice;
+      }
+      // Function that generates a random choice for the computer
+      function getComputerChoice() {
+        return (computerChoice =
+          choices[Math.floor(Math.random() * choices.length)]);
+      }
+      // Function that calls the previous functions to have two choices, determines a winner
+      function playRound() {
+        getPlayerChoice();
+        getComputerChoice();
+        if (playerChoice == "Paper" && computerChoice == "Paper") {
+          console.log("Tie! Try again.");
+        } else if (playerChoice == "Paper" && computerChoice == "Rock") {
+          console.log("You win! Paper beats rock!");
+        } else if (playerChoice == "Paper" && computerChoice == "Scissors") {
+          console.log("You lose! Scissors beat paper!");
+        } else if (playerChoice == "Rock" && computerChoice == "Paper") {
+          console.log("You lose! Paper beats rock!");
+        } else if (playerChoice == "Rock" && computerChoice == "Rock") {
+          console.log("Tie! Try again.");
+        } else if (playerChoice == "Rock" && computerChoice == "Scissors") {
+          console.log("You win! Rock beats scissors!");
+        } else if (playerChoice == "Scissors" && computerChoice == "Scissors") {
+          console.log("Tie! Try again.");
+        } else if (playerChoice == "Scissors" && computerChoice == "Paper") {
+          console.log("You win! Scissors beat paper!");
+        } else if (playerChoice == "Scissors" && computerChoice == "Rock") {
+          console.log("You lose! Rock beats scissors!");
+        } else {
+          console.log("Something is wrong.");
+        }
+      }
+
+      // START
+      playRound();
+    </script>
+  </body>
+</html>
